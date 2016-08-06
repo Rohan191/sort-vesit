@@ -1,0 +1,57 @@
+html
+{
+	height: 100%;
+	width:100%;
+	overflow-x:hidden;
+}
+body
+{
+	
+}
+#sortlogo
+{
+position:relative;
+top:-20px;
+left:50px;
+}
+#moto
+{
+position:relative;
+width:1000px;
+height:200px;
+top:-30px;
+left:130px
+}
+#one
+{
+width:100%;
+
+}
+#navigation
+{
+	overflow:hidden;
+position:relative;
+left:350px;
+}
+a
+{
+text-shadow: none ;
+}
+
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:none;}
+a:active {text-decoration:none;}
+a:link {color:black}      /* unvisited link */
+a:visited {color:black;}  /* visited link */
+a:hover {color:blue;}  /* mouse over link */
+a:active {color:black;} 
+footer
+{
+/**background-color:#3385FF;**/
+background-color:#EFEFE7;
+}
+#main
+{
+background-color:#4D94FF;
+}

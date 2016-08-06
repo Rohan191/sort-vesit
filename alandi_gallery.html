@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="SoRT VESIT Website">
+		<meta name="keywords" content="SoRT,sort,vesit,V.E.S. Institute of Technology,Social,Responisbility,Team,vivekanand,chembur,mumbai">
+		<meta name="author" content="SoRT VESIT">
+	
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="icon" type="image/gif" href="animated_favicon1.gif">
+		<link rel="stylesheet" type="text/css" href="home.css">
+		<link rel="stylesheet" type="text/css" href="slider.css">
+		<link rel="stylesheet" type="text/css" href="enlarge.css">
+		<link rel="stylesheet" type="text/css" href="styles.css"></link>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="fonts/aura_400.font.js"></script>
+<style>
+#main
+{
+height:600px;
+border:10px;
+border-radius:25px;
+padding:10px 20px;
+}
+</style>
+	<script type="text/javascript">
+  $(document).ready(function()
+  {
+   
+	 /*Your ShineTime Welcome Image*/
+	 var default_image = 'alandi_pics/sample1.jpg';
+	 var default_caption = 'Alandi Visit Photo Gallery';
+	 
+	 /*Load The Default Image*/
+	 loadPhoto(default_image, default_caption);
+	 
+	 
+	 function loadPhoto($url, $caption)
+	 {
+	 
+	 
+	    /*Image pre-loader*/
+	    showPreloader();
+	    var img = new Image();
+	    jQuery(img).load( function() 
+		{
+			jQuery(img).hide();
+			hidePreloader();
+		
+        }).attr({ "src": $url });
+	
+	    $('#largephoto').css('background-image','url("' + $url + '")');
+		$('#largephoto').data('caption', $caption);
+	 }
+
+	 
+	 /* When a thumbnail is clicked*/
+	 $('.thumb_container').click(function()
+	 {
+	     
+		  var handler = $(this).find('.large_image');
+		  var newsrc  = handler.attr('src');
+		  var newcaption  = handler.attr('rel');
+		  loadPhoto(newsrc, newcaption);
+	 
+	 });
+	 
+	 /*When the main photo is hovered over*/
+	 $('#largephoto').hover(function()
+	 {
+	    
+		var currentCaption  = ($(this).data('caption'));
+		var largeCaption = $(this).find('#largecaption');
+		
+		largeCaption.stop();
+		largeCaption.css('opacity','0.9');
+		largeCaption.find('.captionContent').html(currentCaption);
+		largeCaption.fadeIn()
+	
+	
+		
+		 largeCaption.find('.captionShine').stop();
+         largeCaption.find('.captionShine').css("background-position","-550px 0"); 
+         largeCaption.find('.captionShine').animate({backgroundPosition: '550px 0'},700);
+		 
+		 Cufon.replace('.captionContent');
+		
+
+	 },
+	 
+	 function()
+	 {
+	    var largeCaption = $(this).find('#largecaption');
+		largeCaption.find('.captionContent').html('');
+		largeCaption.fadeOut();
+	 
+	 });
+	
+	 
+	 
+     /* When a thumbnail is hovered over*/
+	 $('.thumb_container').hover(function()
+	 {  
+         $(this).find(".large_thumb").stop().animate({marginLeft:-7, marginTop:-7},200);
+		 $(this).find(".large_thumb_shine").stop();
+         $(this).find(".large_thumb_shine").css("background-position","-99px 0"); 
+         $(this).find(".large_thumb_shine").animate({backgroundPosition: '99px 0'},700);
+			 
+	 }, function()
+	 {
+	    $(this).find(".large_thumb").stop().animate({marginLeft:0, marginTop:0},200);
+	 });
+	 
+	 function showPreloader()
+	 {
+	   $('#loader').css('background-image','url("images/interface/loader.gif")');
+	 }
+	 
+	 function hidePreloader()
+	 {
+	   $('#loader').css('background-image','url("")');
+	 }
+   
+  });
+</script>
+		<title>SoRT VESIT</title>
+	</head>
+	
+	<body>
+	<div id=one>
+		<div>
+			<br><a href="home.html"><img  id=sortlogo src="sort_web_logo1.png" width="175" height="190" /></a>
+			<img id=moto src="moto.png">
+		</div> 
+	</div>
+	
+	<div id=navigation>
+		<a href="home.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="sort_events.html">EVENTS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="council.html">COUNCIL</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  style="color:blue" href="sort_gallery.html">GALLERY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="sort_about_us.html">ABOUT US</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="sort_contact_us.html">CONTACT US</a>
+	<br>
+	</div>
+	<hr>
+<div id=main>
+<br>
+<div id="container">
+<div id="containertitle">
+Alandi Visit Photo Gallery
+</div>
+   <div class="mainframe">
+      <div id="largephoto">
+	  <div id="loader"></div>
+	  
+	  
+	    <div id="largecaption">
+		 <div class="captionShine"></div>
+		   <div class="captionContent"></div>
+		  
+		</div>
+		
+       <div id="largetrans">  
+      </div>
+	        
+      </div>
+      
+   </div>
+   <div class="thumbnails">
+   <br><br><br>
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample1.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_donation_pics/sample1.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->          
+       
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample2.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample2.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->          
+       
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample3.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample3.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->           
+       
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample4.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample4.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->           
+       
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample5.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample5.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->          
+       
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample6.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample6.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->     
+
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample7.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample7.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->    
+
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample8.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample8.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->  
+
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample9.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample9.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->    	   
+	   
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample10.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample10.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->    	
+
+   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample11.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample11.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->    	   
+	   	   
+	   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample12.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample12.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->    	   
+	      
+	   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample13.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample13.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->  
+	   
+	   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample15.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample15.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->  
+
+	   <!-- start entry-->
+                    <div class="thumbnailimage">
+                        <div class="thumb_container"> 
+                            <div class="large_thumb"> 
+                        		<img src="alandi_pics/thumbnails/sample14.jpg" class="large_thumb_image" alt="thumb" /> 
+                                <img src="alandi_pics/sample14.jpg" class="large_image"  />
+                                <div class="large_thumb_border"></div>
+                                <div class="large_thumb_shine"></div>
+                              </div>
+						</div>
+                       </div>
+       <!--end entry-->    	 
+	   	   
+	   
+	      
+   </div>
+</div>
+
+
+</div>
+<hr>
+<footer>
+<table width="100%">
+<tr>
+<td width="25%"><center><h3>SoRT <font color="red">VESIT</font></h3></center>
+<td width="25%"><center><h3>Our Moto:</h3></center>
+<td width="25%"><center><h3>Contact Us:</h3></center>
+<td width="25%"><center><h3>Feedback & queries:</h3></center>
+<tr>
+<td><center>Copyright<br>
+	SoRT VESIT<br>
+	All Rights Reserved</center>
+<td><center>"Be The Wings The World Needs"</center>
+<td><center>sort.vesit@gmail.com</center>
+<br><center><a href="https://www.facebook.com/groups/266293553480893/"><img src="fb.png" width="25" height="25"></a></center>
+<td><center>For queries <a style="color:blue" href="sort_contact_us.html">click here</a></center>
+</table>
+</footer>
+	</body>
